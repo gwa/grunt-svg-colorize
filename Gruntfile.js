@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    svg_colorize: {
+    svg_colorizer: {
       default_options: {
         options: {
           basecolor: '#444',
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'svg_colorize', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'svg_colorizer', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['test']);
