@@ -1,4 +1,4 @@
-# grunt-svg-colorize
+# grunt-svg-colorizer
 
 > Creates colorized versions of single color SVGs.
 
@@ -8,23 +8,23 @@ This plugin requires Grunt `~0.4.5`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-svg-colorize --save-dev
+npm install grunt-svg-colorizer --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-svg-colorize');
+grunt.loadNpmTasks('grunt-svg-colorizer');
 ```
 
-## The "svg_colorize" task
+## The "svg_colorizer" task
 
 ### Overview
-In your project's Gruntfile, add a section named `svg_colorize` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `svg_colorizer` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  svg_colorize: {
+  svg_colorizer: {
     options: {
       // Color used in base SVGs
       basecolor: '#444',
