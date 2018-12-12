@@ -20,13 +20,39 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     svg_colorizer: {
-      default_options: {
+      array_test: {
         options: {
           basecolor: '#444',
-          colors: ['333333', '999999', 'e5e5e5']
+          colors: [
+            '333333', 
+            '999999', 
+            'e5e5e5'
+          ]
         },
         files: {
-          'tmp': ['test/fixtures/svg/**.svg']
+          'tmp/array': ['test/fixtures/svg/**.svg']
+        }
+      },
+      object_test: {
+        options: {
+          basecolor: '#444',
+          colors: {
+            grey: '333333', 
+            lightgrey: '#999999',
+            offwhite: 'e5e5e5'
+          }
+        },
+        files: {
+          'tmp/object': ['test/fixtures/svg/**.svg']
+        }
+      },
+      string_test: {
+        options: {
+          basecolor: '#444',
+          colors: '333333'
+        },
+        files: {
+          'tmp/string': ['test/fixtures/svg/**.svg']
         }
       }
     },
