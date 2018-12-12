@@ -26,9 +26,8 @@ grunt.loadNpmTasks('grunt-svg-colorizer');
 
 ## Options
 
-**delimiter**
 
----
+### delimiter
 
 Type: `String`
 Default: `-`
@@ -36,9 +35,7 @@ Default: `-`
 The delimiter to be used when adding a suffix to a filename
 
 
-**silent**
-
----
+### silent
 
 Type: `Boolean`
 Default: `false`
@@ -46,9 +43,7 @@ Default: `false`
 Silences success messages during file processing
 
 
-**subfolders**
-
----
+### subfolders
 
 Type: `Boolean`
 Default: `true`
@@ -56,9 +51,7 @@ Default: `true`
 Places all generated files within a subfolder, where each subfolder is named after its source file.
 
 
-**basecolor**
-
----
+### basecolor
 
 Type: `String`
 Default: `#000000`
@@ -66,9 +59,7 @@ Default: `#000000`
 The original color used within the SVGs
 
 
-**colors**
-
----
+### colors
 
 Type: `Array` or `Object` or `String`
 Default: `{}`
