@@ -33,7 +33,7 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "grunt"
   ],
   "dependencies": {
     "get-type": "^1.1.0",
