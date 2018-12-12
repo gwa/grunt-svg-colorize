@@ -32,13 +32,57 @@ module.exports = function(grunt) {
       
       hexed: /^\#/,
       
-      colorize: ( svg, hex ) => svg.replace(new RegExp(`#${options.basecolor.replace(utils.hexed, '')}`, 'g'), `#${hex.replace(utils.hexed, '')}`),
+      fillable: [
+        'altGlyph',
+        'circle',
+        'ellipse',
+        'path',
+        'polygon',
+        'polyline',
+        'rect',
+        'text',
+        'textPath',
+        'tref',
+        'tspan'
+      ],
+      
+      colorize ( svg, hex ) {
+        
+        // Build the color regex.
+        const regex = new RegExp(`#${options.basecolor.replace(utils.hexed, '')}`, 'g');
+        
+        // Determine if color values exists.
+        const colored = regex.test(svg);
+        
+        // Find and replace existing color values.
+        if( colored ) svg = svg.replace(regex, `#${hex.replace(utils.hexed, '')}`);
+        
+        // Otherwise, add color to all fillable elements.
+        else {
+          
+          // Loop through fillable elements.
+          utils.fillable.forEach((element) => {
+            
+            // Build a regex for the fillable element.
+            const regex = new RegExp(`\\<${element}`, 'g');
+            
+            // Add a fill to the element.
+            svg = svg.replace(regex, `<${element} fill="${hex}"`);
+            
+          });
+          
+        }
+        
+        // Return the colorized SVG.
+        return svg;
+          
+      },
       
       path: ( basename, color ) => options.subfolders ? `${basename}/${utils.filename(basename, color)}` : utils.filename(basename, color),
       
       filename: ( basename, color ) => `${basename}${options.delimiter}${color}.svg`,
       
-      convert( file, src, svg, color, hex ) {
+      convert ( file, src, svg, color, hex ) {
         
         // Get the colorized version of the file.
         const colorized = utils.colorize(svg, hex);
