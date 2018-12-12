@@ -1,6 +1,6 @@
 /*
  * grunt-svg-colorizer
- * https://github.com/laurenhamel/grunt-svg-colorizer
+ * https://github.com/gwa/grunt-svg-colorizer
  *
  * Copyright (c) 2017 Timothy Groves
  * Licensed under the MIT license.
